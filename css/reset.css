@@ -1,0 +1,22 @@
+body,div,ul,li,dl,dt,dd,form,textarea,input,h1,h2,h3,h4,h5,h6 ,a,p{
+	margin: 0;
+	padding:0;
+	font-family: "arial, helvetica, sans-serif";
+}
+html{
+	font-size: 16px;
+}
+.score{
+	margin-left: 30%;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+p{
+	color:red ;
+	font-size: 2rem;
+}
+#myCanvas{
+  margin:0 auto;
+  display: block;
+  border: 3px solid #ccc; 
+}

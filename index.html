@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>		
+		<title>俄罗斯方块之王者荣耀之妲己陪你玩</title>
+		<style type="text/css">
+			@media screen and (max-width:1440px) and (min-width:980px) {
+				.btn-group{
+					display: none;
+				}		
+				.btn,.down,.left,.right,.up{
+					display: none;
+				}	
+				#myCanvas{
+					width:250px;
+				}
+						
+			}	
+			@media screen and (max-width:980px) and (min-width:480px) {
+				.btn-group{
+					position: relative;
+					margin-top: -300px;
+				}
+				.btn{
+					position: fixed;
+					width: 2rem;
+					height: 2rem;
+					background: blueviolet;
+					color: red;
+					display: block;
+				}
+				.up{
+					bottom: 20rem;
+					right: 5%;
+				}
+				.down{
+					bottom: 20rem;
+					left: 5%;
+				}
+				.left{
+					bottom: 15rem;
+					left: 5%;
+				}
+				.right{
+					bottom: 15rem;
+					right: 5%;
+				}
+				.start{
+					bottom: 20rem;
+					left: 5%;
+				}
+				.stop{
+					bottom: 20rem;
+					right: 5%;
+				}
+				#myCanvas{
+				  width: 65%;
+				}
+			}		
+			@media screen and (max-width:480px) {
+				.btn-group{
+					position: relative;
+					margin-top: -300px;
+				}
+				.btn{
+					position: fixed;
+					width: 2rem;
+					height: 2rem;
+					background: blueviolet;
+					color: red;
+					display: block;
+				}
+				.up{
+					bottom: 15rem;
+					right: 5%;
+				}
+				.down{
+					bottom: 15rem;
+					left: 5%;
+				}
+				.left{
+					bottom: 10rem;
+					left: 5%;
+				}
+				.right{
+					bottom: 10rem;
+					right: 5%;
+				}
+				.start{
+					bottom: 20rem;
+					left: 5%;
+				}
+				.stop{
+					bottom: 20rem;
+					right: 5%;
+				}
+				#myCanvas{
+				  width: 65%;
+				}			
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="">
+			<div class="score">
+			  <p>score:<span class="scores">0</span></p>			
+		   </div>
+		    <canvas id="myCanvas" width="200" height="400"></canvas>
+		</div>	
+		<div class="btn-group">
+			<button class="btn up" onclick="rotate()">↑</button>
+			<button class="btn down" onclick="moveDown()">↓</button>
+			<button class="btn left" onclick="moveLeft()">←</button>
+			<button class="btn right" onclick="moveRight()">→</button>
+			<button class="btn start" onclick="start()">start</button>
+			<button class="btn stop" onclick="tempstop()">stop</button>
+		</div>	
+		<script src="js/canvas.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
