@@ -135,6 +135,7 @@ function checkfullLine(){
 		if(juzhen[i][0]==1){
 			alert("游戏结束啦!");
 			clearInterval(myinter);
+			tempstop()
 			return;
 		}
 	}
@@ -232,7 +233,7 @@ function rotate(){
 	drawImg(imgsrc[fcube.index]);
    }
 }
-function moveRight (){
+function moveRight(){
 	var right=0;
 	var isempty=true;
 	var px,py;
@@ -257,8 +258,72 @@ function tempstop(){
 	clearInterval(myinter);
 }
 function start(){
-	myinter=setInterval("moveDown()",500);
+	myinter=setInterval("moveDown()",1000);
 }
+var start1=document.getElementsByClassName('start')[0];
+var stop1=document.getElementsByClassName('stop')[0];
+var up1=document.getElementsByClassName('up')[0];
+var dowm1=document.getElementsByClassName('down')[0];
+var left1=document.getElementsByClassName('left')[0];
+var right1=document.getElementsByClassName('right')[0];
+
+start1.addEventListener('click',function(e){
+		e.stopPropagation();
+	    var e = e || window.event;        //e是IE事件，window.event是dom事件       
+	    if(e.preventDefault){    
+	      e.preventDefault();            //DOM中取消事件的方法  
+	       } else {    
+	        e.returnValue = false;       //IE中取消事件的方法  
+	       }    
+	    start()
+},false);
+stop1.addEventListener('click',function(e){
+		e.stopPropagation();
+	    var e = e || window.event;        //e是IE事件，window.event是dom事件       
+	    if(e.preventDefault){    
+	      e.preventDefault();            //DOM中取消事件的方法  
+	       } else {    
+	        e.returnValue = false;       //IE中取消事件的方法  
+	       }     
+	    tempstop()
+},false);
+up1.addEventListener('click',function(e){
+		e.stopPropagation();
+	    var e = e || window.event;        //e是IE事件，window.event是dom事件       
+	    if(e.preventDefault){    
+	      e.preventDefault();            //DOM中取消事件的方法  
+	       } else {    
+	        e.returnValue = false;       //IE中取消事件的方法  
+	       }      
+		rotate()
+},false);
+
+dowm1.addEventListener('click',function(e){
+	    e.stopPropagation();
+	    var e = e || window.event;        //e是IE事件，window.event是dom事件       
+	    if(e.preventDefault){    
+	      e.preventDefault();            //DOM中取消事件的方法  
+	       } else {    
+	        e.returnValue = false;       //IE中取消事件的方法  
+	       }    
+		moveDown()
+},false);
+left1.addEventListener('click',function(e){
+	    e.stopPropagation();
+	    var e = e || window.event;        //e是IE事件，window.event是dom事件       
+	    if(e.preventDefault){    
+	      e.preventDefault();            //DOM中取消事件的方法  
+	       } else {    
+	        e.returnValue = false;       //IE中取消事件的方法  
+	       }      
+	    moveLeft()
+},false);
+right1.addEventListener('click',function(e){	    
+	    e.preventDefault();
+	    moveRight()
+},false);
+//start1.addEventListener('click',start(event),false);
+
 window.onkeydown=function(event){
 	switch(event.keyCode){
 		case 37:moveLeft(); break;
