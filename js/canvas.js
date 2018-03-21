@@ -133,9 +133,10 @@ function checkfullLine(){
 	var isfullLine=true;
 	for(var i=0;i<canW/cubeW;i++){
 		if(juzhen[i][0]==1){
-			alert("游戏结束啦!");
+			
 			clearInterval(myinter);
 			tempstop()
+			alert("游戏结束啦!");
 			return;
 		}
 	}
